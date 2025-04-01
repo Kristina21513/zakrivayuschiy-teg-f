@@ -54,7 +54,6 @@
   align-items: center;
   gap: 52px;
   justify-content: center;
-  align-items: center;
 }
 
 .card {
@@ -79,7 +78,7 @@
 }
 
 .image_sepia {
-  filter: sepia(90%) grayscale(0.4) blur(1px);
+  filter: sepia(40%) grayscale(0.4) blur(1px);
 }
 
 .image_saturate {
@@ -417,7 +416,7 @@
 }
 
 @media (width <= 375px) {
-  .header{
+  .header {
     inline-size: 100%;
     padding: 120px 14px;
   }
