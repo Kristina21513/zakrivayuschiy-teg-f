@@ -153,7 +153,7 @@
   margin-right: 4px;
 }
 
-.card_text:not(:first-of-type ){
+.card_text:not(:first-of-type) {
   margin-block-start: 27px;
 }
 
