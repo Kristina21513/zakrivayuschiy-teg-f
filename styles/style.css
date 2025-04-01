@@ -18,6 +18,10 @@
   font-family: var(--main-font), sans-serif;
   background-color: var(--bg-color);
   padding-inline: var(--padding-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -29,11 +33,12 @@
   background-color: var(--bg-color);
   outline: var(--border);
   padding: 128px 14px;
-  inline-size: var(--content-size);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
   align-items: center;
+  width: min(100%, 696px);
 }
 
 .header_logo {
@@ -44,16 +49,12 @@
   font-size: clamp(0.875rem, 0.226rem + 2.7692cqi, 1.4375rem);
 }
 
-.content_size {
-  inline-size: var(--content-size);
-}
-
-.card_list {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 52px;
   justify-content: center;
+  gap: 52px;
 }
 
 .card {
@@ -152,8 +153,8 @@
   margin-right: 4px;
 }
 
-.card_text:first-of-type {
-  margin-block-end: 27px;
+.card_text:not(:first-of-type ){
+  margin-block-start: 27px;
 }
 
 .card_like-heart {
@@ -162,7 +163,7 @@
   justify-content: flex-end;
   align-items: center;
   margin-block-start: 25.5px;
-  gap: 0;
+  gap: 2px;
 }
 
 .button {
@@ -221,7 +222,6 @@
   height: 38px;
   background-color: var(--bg-color);
 }
-
 
 .card__icon-button:focus {
   outline: none;
@@ -326,14 +326,6 @@
   font-size: var(--accent-font-size, 0.875rem);
 }
 
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-block-end: 102px;
-  margin-block-start: 50px;
-  }
-
 .footer_button {
   display: flex;
   flex-direction: row;
@@ -344,6 +336,7 @@
   padding: 15px 0;
   text-align: center;
   max-inline-size: 338px;
+  margin-block-end: 102px;
 }
 
 .footer_button-image {
@@ -361,7 +354,7 @@
   justify-content: center;
   align-items: center;
   border: 2px solid var(--accent-color);
-  padding: 32px 42px;
+  padding: 28px;
   color: var(--accent-color);
   font-family: var(--accent-font), "Courier New", fantasy;
   font-weight: 400;
@@ -370,14 +363,15 @@
   text-transform: uppercase;
   background-color: var(--bg-color);
   transition: opacity 0.3s ease-in-out;
-  max-inline-size: 350px;
+  inline-size: 353px;
 }
 
 .dialog_form {
   display: grid;
-  grid-template-columns: 0.3fr 1fr;
+  grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr min-content;
-  gap: 30px;
+  row-gap: 30px;
+  column-gap: 20px;
 }
 
 .dialog:not([open]) {
@@ -392,18 +386,19 @@
 
 .dialog_image {
   align-self: center;
-  justify-self: center;
+  justify-self: self-start;
   block-size: 39px;
   inline-size: 39px;
-  color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .dialog_text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
+  inline-size: 100%;
 }
 
 .dialog_button {
@@ -451,20 +446,24 @@
     padding-bottom: 22px;
   }
 
-  .footer {
-    margin-block-start: 3px;
-  }
-
   .footer_button {
     flex-direction: column;
     max-inline-size: 310px;
     padding: 15px 20px;
     gap: 10px;
-    margin: 50px auto 0;
   }
 
   .footer_button-image {
     block-size: 28px;
     inline-size: 28px;
+  }
+
+  .dialog {
+    inline-size: 341px;
+    padding: 28px 40px;
+  }
+
+  .dialog_button {
+    inline-size: 253px;
   }
 }
